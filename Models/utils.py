@@ -21,6 +21,11 @@ PREP = 'prep'
 WH_WHICH = 'wh-which'
 WH_TIME = 'wh-time'
 
+#relation pattern
+PRED = 'PRED'
+LSUBJ = 'LSUBJ'
+LOBJ = 'LOBJ'
+
 def syllabize(text):
     text = ud.normalize('NFC', text)
     time = "\d+:\d+[Hh][Rr]"

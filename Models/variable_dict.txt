@@ -1,0 +1,6 @@
+{'xe bus': 'XEBUS',
+    'đến': 'DEN',
+    'huế': 'HUE',
+    'đà nẵng': 'DANANG',
+    'hồ chí minh': 'HCMC'
+    }

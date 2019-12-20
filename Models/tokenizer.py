@@ -47,7 +47,7 @@ class Tokenizer:
             elif time_pattern.match(token):
                 tags.append(TIME)
             else:
-                raise Exception("Invalid token: " + token)
+                tokens.remove(token)
         return tags
 
 def test(text):
