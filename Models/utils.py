@@ -25,6 +25,10 @@ WH_TIME = 'wh-time'
 PRED = 'PRED'
 LSUBJ = 'LSUBJ'
 LOBJ = 'LOBJ'
+ARRIVE_TIME = 'ATIME'
+FROM_LOC = 'FROM-LOC'
+RUN_TIME = 'RUNTIME'
+NAME = 'NAME'
 
 def syllabize(text):
     text = ud.normalize('NFC', text)

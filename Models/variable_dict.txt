@@ -2,5 +2,7 @@
     'đến': 'DEN',
     'huế': 'HUE',
     'đà nẵng': 'DANANG',
-    'hồ chí minh': 'HCMC'
+    'hồ chí minh': 'HCMC',
+    'wh-which': 'WH_WHICH',
+    'wh-time': 'WH_TIME',
     }

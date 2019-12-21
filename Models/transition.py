@@ -1,4 +1,4 @@
-from arc import *
+from data_type import *
 from utils import *
 class Transition(object):
 

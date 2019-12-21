@@ -12,3 +12,11 @@ class WordNode:
         self.tag = tag
         self.parent = parent
         self.child = child
+
+class Pattern:
+    def __init__(self, type, var, animate):
+        self.type = type
+        self.var = var 
+        self.animate = animate
+    def __str__(self):
+        return self.type + '(' + self.var + ', ' + self.animate + ')'
