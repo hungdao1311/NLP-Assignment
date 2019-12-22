@@ -30,6 +30,21 @@ FROM_LOC = 'FROM-LOC'
 RUN_TIME = 'RUNTIME'
 NAME = 'NAME'
 
+#predicate type
+WH = 'WH'
+THE = 'THE'
+XEBUS = 'XEBUS'
+NAME = 'NAME'
+DEST = 'DEST'
+ARRIVE_TIME = 'ARRIVE_TIME'
+
+#procedural semantic  type
+ATIME = 'ATIME'
+DTIME = 'DTIME'
+
+#semantic quantifier
+PRINT_ALL = 'PRINT-ALL'
+FIND_THE = 'FIND-THE'
 def syllabize(text):
     text = ud.normalize('NFC', text)
     time = "\d+:\d+[Hh][Rr]"
@@ -42,7 +57,7 @@ def syllabize(text):
     return tokens
     
 def load_dicts(file_path):
-    with open(file_path, encoding="utf8") as fr:
+    with open("Models/" + file_path, encoding="utf8") as fr:
         words = fr.read()
         words = ast.literal_eval(words)
     return words

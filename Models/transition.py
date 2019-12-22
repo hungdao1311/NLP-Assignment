@@ -1,5 +1,5 @@
-from data_type import *
-from utils import *
+from .data_type import *
+from .utils import *
 class Transition(object):
 
     # Define set of transitions

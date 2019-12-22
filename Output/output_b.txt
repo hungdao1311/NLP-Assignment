@@ -1,0 +1,6 @@
+WH b1: (& (XEBUS b1 (NAME ?b1 WH_WHICH))(DEST b1 (NAME h1 HUE))(ARRIVE_TIME b1 20:00HR))
+-----------------------------
+THE t1: (& (XEBUS b1 (NAME b1 B3))(DEST b1 (NAME h1 HUE))(FROM-LOC b1 (NAME d1 DANANG))(RUNTIME b1 ?t1))
+-----------------------------
+WH b1: (& (XEBUS b1 (NAME ?b1 WH_WHICH))(DEST b1 (NAME h1 HCMC)))
+-----------------------------

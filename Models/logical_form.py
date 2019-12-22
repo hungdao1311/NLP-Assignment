@@ -1,6 +1,6 @@
-from utils import *
-from dependency_parser import *
-from grammatical_relation import *
+from .utils import *
+from .dependency_parser import *
+from .grammatical_relation import *
 class LogicalForm:
     def __init__(self, patterns):
         self.childs = []
@@ -9,6 +9,7 @@ class LogicalForm:
             if pattern.animate == "WH_TIME" or pattern.animate == "WH_WHICH":
                 self.root = pattern
             self.childs.append(pattern)
+        self.predicates = []
 
     def get_var_name(self, text):
         count = 1
@@ -19,7 +20,7 @@ class LogicalForm:
         self.var_list.append(tmp)
         return tmp
 
-    def print_logical_form(self):
+    def get_logical_form(self):
         result = ""
         global_var = "b1"
         if self.root.animate == "WH_TIME": 
@@ -31,20 +32,23 @@ class LogicalForm:
         for child in self.childs:
             if child.type == NAME:
                 if child.animate == "WH_WHICH":
-                    result += "(XEBUS " + global_var + " (NAME ?" + global_var + " " + child.animate + "))"
+                    result += "(XEBUS " + global_var + " (NAME ?" + global_var + " " + child.animate + "))"  
                 else:
                     result += "(XEBUS " + global_var + " (NAME " + global_var + " " + child.animate + "))"
             if child.type == LOBJ:
                 result += "(DEST " + global_var + " (NAME " + self.get_var_name(child.animate) + " " + child.animate + "))"
+                self.predicates.append(Predicate(DEST, child.animate))
+                continue
             if child.type == FROM_LOC:
                 result += "(FROM-LOC " + global_var + " (NAME " + self.get_var_name(child.animate) + " " + child.animate + "))"
             if child.type == RUN_TIME:
                 result += "(RUNTIME " + global_var + " ?t1)"
             if child.type == ARRIVE_TIME:
                 result += "(ARRIVE_TIME " + global_var + " " + child.animate + ")"
-            
+            self.predicates.append(Predicate(child.type, child.animate))
         result += ")"
-        print(result)
+        return result
+        
 
 def get_logical(question):
     tokenizer = Tokenizer()
@@ -55,9 +59,10 @@ def get_logical(question):
     grammar = GrammaticalRelation(parser.get_shorthand_arcs())
     grammar.print_relations()
     logical = LogicalForm(grammar.patterns)
-    logical.print_logical_form()
+    logical.get_logical_form()
 def test():
     questions = ["Xe bus nào đến thành phố Huế lúc 20:00HR", "Thời gian xe bus B3 từ Đà Nẵng đến Huế", "Xe bus nào đến thành phố Hồ Chí Minh"]
     for question in questions:
         get_logical(question)
-test()
+if __name__ == '__main__':
+    test()

@@ -1,6 +1,6 @@
-from tokenizer import *
-from utils import * 
-from transition import *
+from .tokenizer import *
+from .utils import *
+from .transition import *
 
 class DependencyParser:
     relations_dict = {
@@ -73,3 +73,4 @@ if __name__ == '__main__':
     parser.parse()
     parser.get_shorthand_arcs()
     print(parser)
+    

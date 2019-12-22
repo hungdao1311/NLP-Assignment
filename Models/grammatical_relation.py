@@ -1,5 +1,5 @@
-from dependency_parser import *
-from utils import *
+from .dependency_parser import *
+from .utils import *
 
 class GrammaticalRelation:
     def __init__(self, arcs):
@@ -48,19 +48,8 @@ class GrammaticalRelation:
         self.patterns = sorted(self.patterns, key = lambda x: pattern_type.index(x.type))
         self.arcs = sorted(self.arcs, key = lambda x: relation_type.index(x.type))
         result = list(map(lambda x: self.convert(x), self.arcs))
-        # print('\n'.join(result))
+        return '\n'.join(result)
 
     def print_pattern(self):
         for pattern in self.patterns:
             print(pattern)
-def test():
-    question = input()
-    tokenizer = Tokenizer()
-    tokens = tokenizer.tokenize(question)
-    pos_tag = tokenizer.pos_tag(tokens)
-    parser = DependencyParser(tokens, pos_tag)
-    parser.parse()
-    grammar = GrammaticalRelation(parser.get_shorthand_arcs())
-    grammar.print_relations()
-    grammar.print_pattern()
-test()

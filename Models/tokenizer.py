@@ -1,4 +1,4 @@
-from utils import *
+from .utils import *
 class Tokenizer:
     #set of tags
     def __init__(self, bi_grams_path='bi_grams.txt', tri_grams_path='tri_grams.txt', tags_dict_path='tags_dict.txt'):

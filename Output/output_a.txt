@@ -1,0 +1,18 @@
+(s1 PRED DEN)(s1 TNS PRES)
+(s1 LSUBJ XEBUS)
+(s1 LSUBJ XEBUS)(NAME W2 WH_WHICH)
+(s1 LOBJ (NAME h1 HUE))
+(s1 ARRIVE-TIME 20:00HR)
+-----------------------------
+(s1 PRED DEN)(s1 TNS PRES)
+(s1 LSUBJ XEBUS)
+(s1 LSUBJ XEBUS)(NAME B2 B3)
+(s1 LOBJ (NAME h1 HUE))
+(s1 FROM-LOC (NAME đ1 DANANG))
+(s1 RUNTIME WH_TIME)
+-----------------------------
+(s1 PRED DEN)(s1 TNS PRES)
+(s1 LSUBJ XEBUS)
+(s1 LSUBJ XEBUS)(NAME W2 WH_WHICH)
+(s1 LOBJ (NAME h1 HCMC))
+-----------------------------

@@ -1,0 +1,6 @@
+PRINT-ALL ?b (BUS ?b)(ATIME ?b HUE 20:00HR)
+-----------------------------
+FIND-THE ?t (RUN-TIME B3 DANANG HUE ?t)
+-----------------------------
+PRINT-ALL ?b (BUS ?b)(ATIME ?b HCMC ?t)
+-----------------------------
